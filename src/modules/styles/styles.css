@@ -119,3 +119,48 @@ slide-right {
         flex: 0 0 100%;
     }
 }
+
+
+/* Bottom Section */
+
+.bottom-panel {
+    height: 100svh;
+    background-color: rgb(20, 20, 20);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-box {
+    background-color: rgba(87, 170, 87, 0.829);
+    height: 80svh;
+    width: 40svw;
+    margin-right: 70rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-btn-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    color: white;
+    font-size: 3svw;
+    font-family: inherit;
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    margin: 5rem;
+}
+
+.btn:hover {
+    cursor: pointer;
+    color: black;
+}
