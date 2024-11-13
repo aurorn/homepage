@@ -10,6 +10,12 @@ function initialize() {
         const { initializeCarousel } = module
         initializeCarousel()
     })
+
+    import('./modules/textShow.js').then((module) => {
+        const { toggleVis, showText } = module
+        toggleVis();
+        showText();
+    })
 }
 
 document.addEventListener('DOMContentLoaded', initialize)

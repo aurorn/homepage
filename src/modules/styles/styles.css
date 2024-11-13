@@ -47,7 +47,7 @@ slide-right {
     position: relative;
     transform: translateY(150px);
     opacity: 0;
-    transition: 1s all ease;
+    transition: 0.5s all ease;
 }
 
 .reveal.active {
@@ -125,24 +125,28 @@ slide-right {
 
 .bottom-panel {
     height: 100svh;
+    width: 100svw;
     background-color: rgb(20, 20, 20);
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+    gap: 3%;
 }
 
-.about-box {
+.btn-box {
     background-color: rgba(87, 170, 87, 0.829);
-    height: 80svh;
-    width: 40svw;
-    margin-right: 70rem;
+    height: 80%;
+    width: 40%;
+    /*margin-right: 70rem;*/
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 }
 
-.about-btn-list {
+.box-btn-list {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -163,4 +167,29 @@ slide-right {
 .btn:hover {
     cursor: pointer;
     color: black;
+}
+
+.txt-box { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid;
+    border-radius: 1%;
+    border-width: 1px;
+    border-color: white;
+    width: 40%;
+    height: 80%;
+    
+}
+
+.about-txt {
+    font-size: 2rem;
+    padding: 2%;
+}
+
+/* Hidden */
+
+.hidden {
+    display: none;
 }
