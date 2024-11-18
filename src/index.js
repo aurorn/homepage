@@ -13,8 +13,8 @@ function initialize() {
 
     import('./modules/textShow.js').then((module) => {
         const { toggleVis, showText } = module
-        toggleVis();
-        showText();
+        toggleVis()
+        showText()
     })
 }
 

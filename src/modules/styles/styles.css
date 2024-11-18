@@ -64,7 +64,7 @@ slide-right {
     margin: 0 auto;
     overflow: hidden;
     height: 100svh;
-    flex-direction:column;
+    flex-direction: column;
 }
 
 .carousel {
@@ -120,7 +120,6 @@ slide-right {
     }
 }
 
-
 /* Bottom Section */
 
 .bottom-panel {
@@ -143,7 +142,6 @@ slide-right {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
 }
 
 .box-btn-list {
@@ -169,7 +167,7 @@ slide-right {
     color: black;
 }
 
-.txt-box { 
+.txt-box {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -180,7 +178,6 @@ slide-right {
     border-color: white;
     width: 40%;
     height: 80%;
-    
 }
 
 .about-txt {
