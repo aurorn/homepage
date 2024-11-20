@@ -1,21 +1,13 @@
 import './modules/styles/styles.css'
+import Reveal from 'reveal.js';
+import 'reveal.js/dist/reveal.css';
+import 'reveal.js/dist/theme/black.css';
 
-function initialize() {
-    import('./modules/reveal.js').then((module) => {
-        const { reveal } = module
-        window.addEventListener('scroll', reveal, { passive: true })
-    })
 
-    import('./modules/carousel.js').then((module) => {
-        const { initializeCarousel } = module
-        initializeCarousel()
-    })
+const deck = new Reveal({
+    embedded: true,
+    scroll: true,
+});
+deck.initialize({view: 'scroll', scrollProgress: true,});
 
-    import('./modules/textShow.js').then((module) => {
-        const { toggleVis, showText } = module
-        toggleVis()
-        showText()
-    })
-}
 
-document.addEventListener('DOMContentLoaded', initialize)

@@ -1,9 +1,11 @@
 function toggleVis() {
-    const btn = document.querySelectorAll(".btn");
+    const btns = document.querySelectorAll(".btn");
     const textBox = document.querySelector(".txt-box");
-    btn.forEach((btn) => {
+
+    btns.forEach((btn) => {
         btn.addEventListener("click", () => {
-            textBox.style.display = "block";
+                
+                textBox.classList.remove("hidden");
         });
     });
 }

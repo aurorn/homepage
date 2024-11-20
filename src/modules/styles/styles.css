@@ -1,192 +1,35 @@
+/* Scoped Global Styles */
 html,
 body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
     background-color: rgb(46, 46, 46);
-}
-
-.top-box {
-    min-height: 100svh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(20, 20, 20);
-}
-/* Intro Sliding in Animation */
-.intro-header,
-slide-right {
-    display: flex;
-    justify-content: center;
-    align-content: center;
     color: rgb(221, 221, 221);
-    font-size: 3.5rem;
-    filter: drop-shadow(2rem 2rem 0.3rem #0e0d0dbd);
+    height: 100%; /* Ensure full viewport height */
 }
 
-.slide-right {
-    width: 100%;
-    overflow: hidden;
-    max-width: 30.5rem;
-}
-
-.slide-right h1 {
-    animation: 2s slide-right 1s forwards;
-    transform: translateX(-100%);
-}
-
-@keyframes slide-right {
-    to {
-        transform: translateX(0);
-    }
-}
-
-/* Scrolling down Reveal Animation */
-
+/* Ensure Reveal.js Container Fills Screen */
 .reveal {
-    position: relative;
-    transform: translateY(150px);
-    opacity: 0;
-    transition: 0.5s all ease;
+    height: 100%;
+    overflow: visible;
 }
 
-.reveal.active {
-    transform: translateY(0);
-    opacity: 1;
+.slides {
+    display: block; /* Allow vertical stacking */
 }
 
-/* Middle Section Carousel */
+/* Reveal.js Integration */
+.reveal h1,
+.reveal h2,
+.reveal h3 {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
 
-.carousel-box {
-    display: flex;
-    justify-content: center;
-    max-width: 60svw;
+.reveal p,
+.reveal ul {
+    text-align: center;
     margin: 0 auto;
-    overflow: hidden;
-    height: 100svh;
-    flex-direction: column;
-}
-
-.carousel {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-slide {
-    flex: 0 0 100%;
-    display: flex;
-    align-items: center;
-}
-
-.carousel-img {
-    max-width: 100%;
-    height: auto;
-}
-
-.indicators {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.indicator {
-    width: 10px;
-    height: 10px;
-    background-color: #ccc;
-    border-radius: 50%;
-    margin: 0 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.indicator.active {
-    background-color: #333;
-}
-
-.carousel {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-slide {
-    flex: 0 0 100%;
-    display: flex;
-    align-items: center;
-}
-
-@media (max-width: 768px) {
-    .carousel-slide {
-        flex: 0 0 100%;
-    }
-}
-
-/* Bottom Section */
-
-.bottom-panel {
-    height: 100svh;
-    width: 100svw;
-    background-color: rgb(20, 20, 20);
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 3%;
-}
-
-.btn-box {
-    background-color: rgba(87, 170, 87, 0.829);
-    height: 80%;
-    width: 40%;
-    /*margin-right: 70rem;*/
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.box-btn-list {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.btn {
-    color: white;
-    font-size: 3svw;
-    font-family: inherit;
-    background: none;
-    border: none;
-    outline: none;
-    box-shadow: none;
-    margin: 5rem;
-}
-
-.btn:hover {
-    cursor: pointer;
-    color: black;
-}
-
-.txt-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: solid;
-    border-radius: 1%;
-    border-width: 1px;
-    border-color: white;
-    width: 40%;
-    height: 80%;
-}
-
-.about-txt {
-    font-size: 2rem;
-    padding: 2%;
-}
-
-/* Hidden */
-
-.hidden {
-    display: none;
+    max-width: 600px;
 }
