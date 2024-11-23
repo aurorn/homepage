@@ -6,33 +6,59 @@
         <title>Homepage</title>
     </head>
     <body>
-        <div class="reveal">
-            <div class="slides">
-                <section>
-                    <h1>Welcome</h1>
-                </section>
-                <section>
-                    <h2>About Me</h2>
-                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
-                </section>
-                <section>
-                    <h2>My Projects</h2>
-                    <ul>
-                        <li>Project 1: </li>
-                        <li>Project 2: </li>
-                        <li>Project 3: </li>
-                    </ul>
-                </section>
-                <section>
-                    <h2>Contact Me</h2>
-                    <p>
-                        Email: <a href="mailto:example@example.com">example@example.com</a><br>
-                        LinkedIn: <a href="https://www.linkedin.com/in/your-profile">LinkedIn</a>
-                    </p>
-                </section>
+        <div class="top-box">
+            <div class="intro-header slide-right">
+                <h1 class="">Welcome</h1>
             </div>
+            <aside class="hidden-content">
+                <div class="about-bar">
+                    <div class="about-bar-box">
+                        <div class="about-bar-img">
+                            <img class="about-img" />
+                        </div>
+                        <div class="about-bar-content">
+                            <p class="about-text"></p>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <button class="action-button"> About ▶</button>
         </div>
+        <main>
+            <div class="carousel-box reveal">
+                <div class="carousel">
+                    <div class="card" data-state="inactive" data-position="0">
+                        <img class="carousel-img" src="./images/bg1.jpg" />
+                        <h2 class="proj-name">Project 1</h2>
+                        <p class="carousel-text">Technologies: HTML, CSS</p>
+                    </div>
+                    <div class="card" data-state="active" data-position="1">
+                        <img class="carousel-img" src="./images/bg1.jpg" />
+                        <h2 class="proj-name">Project 2</h2>
+                        <p class="carousel-text">Technologies: JavaScript, React</p>
+                    </div>
+                    <div class="card" data-state="inactive" data-position="-1">
+                        <img class="carousel-img" src="./images/bg1.jpg" />
+                        <h2 class="proj-name">Project 3</h2>
+                        <p class="carousel-text">Technologies: Vue.js, Node.js</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-panel">
+                <div class="btn-box">
+                    <div class="box-btn-list">
+                        <button class="git-btn btn reveal">Github</button>
+                    </div>
+                </div>
+                <div class="txt-box hidden ">
+                    <div class="git-txt"><p></p></div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="footer">
+                <p class="footer-text"></p>
+            </div>
+        </footer>
     </body>
 </html>

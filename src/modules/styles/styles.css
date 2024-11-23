@@ -1,35 +1,334 @@
-/* Scoped Global Styles */
 html,
 body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
     background-color: rgb(46, 46, 46);
+}
+
+
+.top-box {
+    position: relative;
+    width: 100svw;
+    height: 100svh;
+    overflow: hidden;
+    background: linear-gradient(135deg, #3a3a3a, #1a1a1a);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    transition: transform 0.5s ease-in-out;
+}
+
+
+/*.intro-header,
+slide-right {
+    display: flex;
+    justify-content: center;
+    align-content: center;
     color: rgb(221, 221, 221);
-    height: 100%; /* Ensure full viewport height */
+    font-size: 3.5rem;
+    filter: drop-shadow(2rem 2rem 0.3rem #0e0d0dbd);
 }
 
-/* Ensure Reveal.js Container Fills Screen */
-.reveal {
+.slide-right {
+    width: 100%;
+    overflow: hidden;
+    max-width: 30.5rem;
+}
+
+.slide-right h1 {
+    animation: 2s slide-right 1s forwards;
+    transform: translateX(-100%);
+}
+
+@keyframes slide-right {
+    to {
+        transform: translateX(0);
+    }
+}*/
+
+.intro-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     height: 100%;
-    overflow: visible;
-}
-
-.slides {
-    display: block; /* Allow vertical stacking */
-}
-
-/* Reveal.js Integration */
-.reveal h1,
-.reveal h2,
-.reveal h3 {
-    font-family: 'Roboto', sans-serif;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 3rem;
     text-align: center;
+    z-index: 1;
+    transition: transform 0.5s ease-in-out;
 }
 
-.reveal p,
-.reveal ul {
-    text-align: center;
+.welcome-text {
+    margin: 0;
+    padding: 0;
+}
+
+.hidden-content {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out;
+    z-index: 2;
+}
+
+.about-bar-content .about-text {
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.action-button {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: white;
+    padding: 1rem;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 3;
+    background: none;
+    animation: bounce 2s infinite ease-in-out;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.action-button:hover {
+    transform: translateY(-50%) scale(1.2);
+}
+
+.action-button:active {
+    transform: translateY(-50%) scale(0.9);
+    box-shadow: none;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(-50%);
+    }
+    50% {
+        transform: translateY(-55%);
+    }
+}
+
+aside {
+    background-color: #1a1a1a;
+}
+
+.reveal {
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 0.5s all ease;
+}
+
+.reveal.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.carousel-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100svw;
     margin: 0 auto;
-    max-width: 600px;
+    overflow: hidden;
+    height: 100svh;
+}
+
+.carousel-img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    position: relative;
+    pointer-events: none;
+    user-select: none;
+}
+
+.card:hover {
+    opacity: 1;
+}
+
+.carousel:hover .card:not(:hover) {
+    opacity: 0.5;
+}
+
+.proj-name {
+    display: flex;
+    left: auto;
+    padding-top: 5%;
+}
+
+.carousel-text {
+    padding: 15%;
+    padding-top: 0%;
+}
+
+.carousel {
+    position: relative;
+    height: 100svh;
+    width: 100svw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    height: auto;
+    width: 30svw;
+    margin: 0 2% 0 2%;
+    transition:
+        transform 0.3s ease,
+        z-index 0s ease,
+        opacity 0.3s ease;
+    opacity: 1;
+    position: absolute;
+    background: white;
+    user-select: none;
+}
+
+/* Active Card */
+.card[data-position='0'] {
+    transform: translateX(0) scale(1.2);
+    opacity: 1;
+    z-index: 10;
+}
+
+/* Right Card */
+.card[data-position='1'] {
+    transform: translateX(100%) scale(0.6);
+    opacity: 0.5;
+    z-index: 5;
+}
+
+/* Left Card */
+.card[data-position='-1'] {
+    transform: translateX(-100%) scale(0.6);
+    opacity: 0.5;
+    z-index: 5;
+}
+
+/* Off-Screen Cards */
+.card:not([data-position='0']):not([data-position='1']):not(
+        [data-position='-1']
+    ) {
+    transform: translateX(200%);
+    opacity: 0;
+    z-index: 1;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 15;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-button:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-button-left {
+    left: 10px;
+}
+
+.carousel-button-right {
+    right: 10px;
+}
+
+/* Bottom Section */
+
+.bottom-panel {
+    height: 100svh;
+
+    background-color: rgb(20, 20, 20);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3%;
+}
+
+.btn-box {
+    background-color: rgba(87, 170, 87, 0.829);
+    height: 80%;
+    width: 40%;
+    /*margin-right: 70rem;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-btn-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    color: white;
+    font-size: 3svw;
+    font-family: inherit;
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    margin: 5rem;
+}
+
+.btn:hover {
+    cursor: pointer;
+    color: black;
+}
+
+.txt-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid;
+    border-radius: 1%;
+    border-width: 1px;
+    border-color: white;
+    width: 40%;
+    height: 80%;
+}
+
+.about-txt {
+    font-size: 2rem;
+    padding: 2%;
+}
+
+.hidden {
+    display: none;
 }
