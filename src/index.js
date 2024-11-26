@@ -1,23 +1,21 @@
 import './modules/styles/styles.css'
+import './modules/styles/navbar.css'
 
 function initialize() {
-    import('./modules/reveal.js').then((module) => {
-        const { reveal } = module
-        window.addEventListener('scroll', reveal, { passive: true })
-    })
-
-    import('./modules/textShow.js').then((module) => {
-        const { toggleVis, showText } = module
-        toggleVis()
-        showText()
-    })
     import('./modules/carousel.js').then((module) => {
         const { initializeCarousel } = module
         initializeCarousel()
     })
-    import('./modules/sideBar.js').then((module) => {
-        const { initializeSideBar } = module
-        initializeSideBar()
+
+    import('./modules/about.js').then((module) => {
+        const { initializeAbout, initializeAnimation } = module
+        initializeAbout()
+        initializeAnimation()
+    })
+
+    import('./modules/navbar.js').then((module) => {
+        const { initializeNavbar } = module
+        initializeNavbar()
     })
 }
 

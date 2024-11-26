@@ -18,7 +18,6 @@ function showText() {
         gitBox.textContent = ''
     }
 
-
     gitBtn.addEventListener('click', () => {
         clearAllBoxes()
         gitBox.textContent = gitTxt

@@ -6,26 +6,45 @@
         <title>Homepage</title>
     </head>
     <body>
-        <div class="top-box">
+        <div class="navbar">
+            <ul class="navbar-nav">
+                <li data-section="welcome" class="navbar-item">Welcome</li>
+                <li data-section="projects" class="navbar-item">Projects</li>
+                <li data-section="technology" class="navbar-item">Technology</li>
+            </ul>
+        </div>
+        <div class="top-box" id="welcome">
             <div class="intro-header slide-right">
                 <h1 class="">Welcome</h1>
+                <div class="action-button-wrapper about">
+                    <button class="action-button">About ▶</button>
+                 </div>
             </div>
-            <aside class="hidden-content">
+            <aside class="hidden-content fade"> 
                 <div class="about-bar">
+                    <div class="action-button-wrapper home">
+                        <button class="action-button">◀ Home</button>
+                    </div>
                     <div class="about-bar-box">
-                        <div class="about-bar-img">
-                            <img class="about-img" />
+                        <div class="about-img-wrapper">
+                            <img class="about-img" src="./images/index.jpg" />
                         </div>
-                        <div class="about-bar-content">
-                            <p class="about-text"></p>
+                        <div class="about-title-wrapper">
+                            <h2 class="about-title">About the author</h2>
+                            <div class="about-underline"></div>
+                        </div>
+                        <div class="about-bar-wrapper">
+                            <p class="about-text">
+                                Hey there, My names Sam!
+                                I'm a Front-End Developer with a passion on anything technology based
+                            </p>
                         </div>
                     </div>
                 </div>
             </aside>
-            <button class="action-button"> About ▶</button>
         </div>
         <main>
-            <div class="carousel-box reveal">
+            <div class="carousel-box reveal" id="projects">
                 <div class="carousel">
                     <div class="card" data-state="inactive" data-position="0">
                         <img class="carousel-img" src="./images/bg1.jpg" />
@@ -44,15 +63,16 @@
                     </div>
                 </div>
             </div>
-            <div class="bottom-panel">
-                <div class="btn-box">
-                    <div class="box-btn-list">
-                        <button class="git-btn btn reveal">Github</button>
+            <div class="bottom-panel" id="technology">
+                <div class="tech-box">
+                    <div class="tech-title">Technologies Used:</div>
+                    <div class="tech-icons-box">
+                        <div class="tech-carousel">
+                            <div class="carousel-slide-track"></div>
+                        </div>
                     </div>
                 </div>
-                <div class="txt-box hidden ">
-                    <div class="git-txt"><p></p></div>
-                </div>
+                
             </div>
         </main>
         <footer>
