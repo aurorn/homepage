@@ -35,14 +35,10 @@ export function addIcons() {
         svg.src = tech.file
         svg.alt = `${tech.name} Icon`
         svg.className = 'svg'
-        svg.style.width = '5svw'
-        svg.style.height = '5svh'
 
         const title = document.createElement('p')
         title.className = 'tech-name'
         title.textContent = tech.name
-        title.style.marginTop = '3%'
-        title.style.fontSize = '1svw'
 
         techWrapper.appendChild(svg)
         techWrapper.appendChild(title)

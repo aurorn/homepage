@@ -5,23 +5,23 @@
     --background-gradient-start: #414345;
     --background-gradient-end: #232526;
     --background-overlay: rgba(20, 20, 20, 0.2);
-  
+
     /* Text Colors */
     --text-color: var(--primary-color-translucent);
     --text-color-dark: #333;
     --text-color-light: #fff;
-  
+
     /* Shadow Colors */
     --shadow-color: rgba(0, 0, 0, 0.5);
     --shadow-color-light: rgba(0, 0, 0, 0.2);
-  
+
     /* Navbar Colors */
     --navbar-item-color: #aaa;
     --navbar-item-hover-color: #fff;
-  }
-  
-  /* Dark Mode Overrides */
-  body.dark-mode {
+}
+
+/* Dark Mode Overrides */
+body.dark-mode {
     --primary-color: #1a1a1a;
     --primary-color-translucent: rgba(26, 26, 26, 0.9);
     --background-gradient-start: #232526;
@@ -33,20 +33,29 @@
     --shadow-color: rgba(0, 0, 0, 0.7);
     --navbar-item-color: #ccc;
     --navbar-item-hover-color: #fff;
-  }
-  
-  /* Existing CSS, replacing color values with variables */
-  html,
-  body {
+}
+
+/* Existing CSS, replacing color values with variables */
+html,
+body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
     background: var(--background-gradient-end);
-    background: -webkit-linear-gradient(to right, var(--background-gradient-start), var(--background-gradient-end));
-    background: linear-gradient(to right, var(--background-gradient-start), var(--background-gradient-end));
+    background: -webkit-linear-gradient(
+        to right,
+        var(--background-gradient-start),
+        var(--background-gradient-end)
+    );
+    background: linear-gradient(
+        to right,
+        var(--background-gradient-start),
+        var(--background-gradient-end)
+    );
     overflow-x: hidden;
     position: relative;
-  }
+    font-size: 16px;
+}
 
 .top-box {
     position: relative;
@@ -223,7 +232,7 @@
 }
 
 .about-text {
-    font-size: 1.0svw;
+    font-size: 1svw;
     color: var(--text-color);
     transform: translateY(200%);
 }
@@ -254,17 +263,16 @@
     }
 }
 
-
 /* Carousel Styles */
 .carousel-box {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    max-width: 100vw;
+    max-width: 100svw;
     margin: 0 auto;
     overflow: hidden;
-    height: 100vh; /* Use standard viewport units */
+    height: 100svh;
     background-color: var(--background-overlay);
 }
 
@@ -275,23 +283,29 @@
     align-items: center;
 }
 
-.carousel-title-line{
-    height: 0.1svh;
+.carousel-title-line-1 {
+    height: 0.3svh;
     background-color: var(--text-color);
     width: 50svw;
+}
 
+.carousel-title-line-2 {
+    height: 0.3svh;
+    background-color: var(--text-color);
+    width: 50svw;
+    display: none;
 }
 
 .carousel-title {
-    color:var(--text-color);
-    font-size: 1.5rem;
+    color: var(--text-color);
+    font-size: 4rem;
     margin: 5%;
 }
 
 .carousel {
     position: relative;
-    height: 75vh;
-    width: 100vw;
+    height: 100%;
+    width: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -305,9 +319,9 @@
     align-items: center;
     box-shadow: 0 4px 10px var(--shadow-color);
     height: auto;
-    width: 300px; 
-    max-width: 100%; 
-    margin: 0 20px; 
+    width: 25svw;
+    max-width: 30svw;
+    margin: 0 20px;
     transition:
         transform 0.3s ease,
         z-index 0s ease,
@@ -332,11 +346,11 @@
     display: flex;
     left: auto;
     padding-top: 5%;
-    font-size: 1.5rem; /* Use rem units or fixed px */
+    font-size: 4rem; /* Use rem units or fixed px */
 }
 
 .carousel-text {
-    font-size: 1rem;
+    font-size: 1vw;
     padding: 15%;
     padding-top: 0%;
 }
@@ -363,7 +377,9 @@
 }
 
 /* Off-Screen Cards */
-.card:not([data-position='0']):not([data-position='1']):not([data-position='-1']) {
+.card:not([data-position='0']):not([data-position='1']):not(
+        [data-position='-1']
+    ) {
     transform: translateX(200%);
     opacity: 0;
     z-index: 1;
@@ -371,20 +387,24 @@
 
 .carousel-button {
     position: absolute;
-    top: 64%;
+    top: 65%;
     transform: translateY(-50%);
     background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     color: var(--primary-color);
     border: none;
-    width: 40px; /* Fixed size */
-    height: 40px;
+    width: 3%;
+    height: 2%;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 15;
     transition: background-color 0.3s ease;
-    font-size: 16px; /* Fixed font size */
+    font-size: 1vw;
+}
+.carousel-button:hover {
+    color: rgb(255, 199, 96);
 }
 
 .carousel-button-right {
@@ -405,33 +425,6 @@
 }
 
 /* Mobile Styles */
-@media (max-width: 768px) {
-    .card {
-        width: 80%;
-    }
-
-    .proj-name {
-        font-size: 1.2rem;
-    }
-
-    .carousel-text {
-        font-size: 0.9rem;
-    }
-
-    .carousel-button {
-        width: 30px;
-        height: 30px;
-        font-size: 14px;
-    }
-
-    .carousel-button-right {
-        right: 20%;
-    }
-
-    .carousel-button-left {
-        left: 20%;
-    }
-}
 
 /* Bottom Section */
 
@@ -446,7 +439,7 @@
 
 .tech-box {
     height: 90%;
-    width: 70%;
+    width: 90%;
     display: flex;
     flex-direction: column;
 }
@@ -460,7 +453,7 @@
 
 .tech-title {
     color: var(--text-color);
-    font-size: 1.5rem;
+    font-size: 3svw;
     margin: 5%;
 }
 
@@ -483,7 +476,7 @@
     flex-direction: row;
     background-color: rgba(0, 0, 0, 0.452);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    width: 50%;
+    width: 40%;
     padding: 5%;
     justify-content: center;
     align-items: center;
@@ -514,12 +507,101 @@
 .tech-name {
     color: var(--text-color);
     font-size: 0.3rem;
+    margin-top: 3%;
+    font-size: 100%;
 }
 
 .svg {
+    width: 50%;
     filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
 }
 
 .hidden {
     display: none;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+    }
+
+    .carousel-box {
+        height: 65svh;
+    }
+
+    .carousel-title {
+        font-size: 5svw;
+    }
+
+    .carousel-title-line-1 {
+        width: 25svw;
+    }
+    .carousel-title-line-2 {
+        display: block;
+        width: 25svw;
+    }
+
+    .carousel {
+        width: 100svw;
+        height: 50svh;
+    }
+
+    .card[data-position='-1'],
+    .card[data-position='1'] {
+    }
+
+    .card[data-position='0'] {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+        z-index: 10;
+    }
+
+    .card {
+        width: 80svw;
+        height: auto;
+        max-width: 60svw;
+    }
+
+    .carousel-button {
+        display: none;
+    }
+
+    .proj-name {
+        font-size: 1.2rem;
+    }
+
+    .carousel-text {
+        font-size: 0.9rem;
+    }
+
+    .carousel-button {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+
+    .carousel-button-right {
+        right: 20%;
+    }
+
+    .carousel-button-left {
+        left: 20%;
+    }
+
+    .tech-box {
+        width: 90%;
+    }
+
+    .tech-icons-box {
+        width: 80%;
+    }
+
+    .svg {
+        width: 10svw;
+    }
+
+    .tech-name {
+        font-size: 3svw;
+    }
 }

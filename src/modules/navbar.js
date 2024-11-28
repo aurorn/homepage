@@ -2,7 +2,7 @@ export function initializeNavbar() {
     const navbarItems = document.querySelectorAll('.navbar-item')
     const sections = document.querySelectorAll(
         '#welcome, #projects, #technology'
-    );
+    )
 
     function updateActiveSection() {
         sections.forEach((section, index) => {
@@ -10,9 +10,9 @@ export function initializeNavbar() {
             if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
                 navbarItems.forEach((item) => item.classList.remove('active'))
                 navbarItems[index].classList.add('active')
-            };
-        });
-    };
+            }
+        })
+    }
 
     window.addEventListener('scroll', updateActiveSection)
 
@@ -21,19 +21,19 @@ export function initializeNavbar() {
             const sectionId = item.getAttribute('data-section')
             const targetSection = document.getElementById(sectionId)
             targetSection.scrollIntoView({ behavior: 'smooth' })
-        });
-    });
+        })
+    })
 
     navbarItems.forEach((item) => {
         item.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            const sectionId = item.getAttribute('data-section');
-            const targetSection = document.getElementById(sectionId);
-            targetSection.scrollIntoView({ behavior: 'smooth' });
-          }
-        });
-      });
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault()
+                const sectionId = item.getAttribute('data-section')
+                const targetSection = document.getElementById(sectionId)
+                targetSection.scrollIntoView({ behavior: 'smooth' })
+            }
+        })
+    })
 
     updateActiveSection()
 }
