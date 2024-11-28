@@ -8,16 +8,16 @@
     <body>
         <div class="navbar">
             <ul class="navbar-nav">
-                <li data-section="welcome" class="navbar-item">Welcome</li>
-                <li data-section="projects" class="navbar-item">Projects</li>
-                <li data-section="technology" class="navbar-item">Technology</li>
+                <li data-section="welcome" class="navbar-item" tabindex="0">Welcome</li>
+                <li data-section="projects" class="navbar-item" tabindex="1">Projects</li>
+                <li data-section="technology" class="navbar-item"tabindex="2">Technology</li>
             </ul>
         </div>
         <div class="top-box" id="welcome">
             <div class="intro-header slide-right">
                 <h1 class="">Welcome</h1>
                 <div class="action-button-wrapper about">
-                    <button class="action-button">About ▶</button>
+                    <button class="action-button" aria-label="About the author">About ▶</button>
                  </div>
             </div>
             <aside class="hidden-content fade"> 
@@ -27,7 +27,7 @@
                     </div>
                     <div class="about-bar-box">
                         <div class="about-img-wrapper">
-                            <img class="about-img" src="./images/index.jpg" />
+                            <img class="about-img" src="./images/index.jpg" alt="Author Image" aria-hidden="true"/>
                         </div>
                         <div class="about-title-wrapper">
                             <h2 class="about-title">About the author</h2>
@@ -35,8 +35,7 @@
                         </div>
                         <div class="about-bar-wrapper">
                             <p class="about-text">
-                                Hey there, My names Sam!
-                                I'm a Front-End Developer with a passion on anything technology based
+                                Hi, I'm Sam, a front-end web developer who loves creating engaging user experiences. I'm fascinated by all things tech—whether it's coding, gadgets, or exploring the latest innovations. Always eager to learn, build, and bring ideas to life!
                             </p>
                         </div>
                     </div>
@@ -45,6 +44,11 @@
         </div>
         <main>
             <div class="carousel-box reveal" id="projects">
+                <div class="carousel-title-container">
+                    <div class="carousel-title-line"></div>
+                    <div class="carousel-title">Projects</div>
+                </div>
+                
                 <div class="carousel">
                     <div class="card" data-state="inactive" data-position="0">
                         <img class="carousel-img" src="./images/bg1.jpg" />
@@ -65,11 +69,15 @@
             </div>
             <div class="bottom-panel" id="technology">
                 <div class="tech-box">
-                    <div class="tech-title">Technologies Used:</div>
-                    <div class="tech-icons-box">
-                        <div class="tech-carousel">
-                            <div class="carousel-slide-track"></div>
-                        </div>
+                    <div class="titleLine">
+                        <div class="tech-title">Technologies</div>
+                        <div class="tech-title-line"></div>
+                    </div>
+                    <div class="tech-container">
+                            <div class="tech-icons-box">
+                                <div class="tech-list-1">
+                            </div>
+                         </div>
                     </div>
                 </div>
                 

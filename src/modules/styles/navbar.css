@@ -18,7 +18,7 @@
 .navbar-item {
     margin: 1rem 0;
     padding: 0.5rem;
-    font-size: 1.2rem;
+    font-size: 1.2svw;
     color: #aaa;
     cursor: pointer;
     transition:
@@ -32,6 +32,6 @@
 
 .navbar-item.active {
     color: #f8e4be;
-    font-size: 1.5rem;
+    font-size: 1.5svw;
     font-weight: bold;
 }

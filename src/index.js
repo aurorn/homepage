@@ -17,6 +17,11 @@ function initialize() {
         const { initializeNavbar } = module
         initializeNavbar()
     })
+
+    import('./modules/icons.js').then((module) => {
+        const { addIcons } = module
+        addIcons()
+    })
 }
 
 document.addEventListener('DOMContentLoaded', initialize)
